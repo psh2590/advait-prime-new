@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advait Prime Consultancy | Strategic Growth</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        @keyframes scroll { 0% { transform: translateX(100%); } 100% { transform: translateX(-100%); } }
+        .marquee { white-space: nowrap; overflow: hidden; background: #0f172a; color: #fbbf24; padding: 12px 0; border-bottom: 2px solid #fbbf24; }
+        .marquee p { display: inline-block; animation: scroll 25s linear infinite; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; }
+        .hero-bg {
+            background: linear-gradient(rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.8)), url('https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=2070');
+            background-size: cover; background-position: center;
+        }
+        .service-card { transition: all 0.3s ease; border-left: 4px solid transparent; }
+        .service-card:hover { border-left: 4px solid #2563eb; transform: translateX(10px); background: #f8fafc; }
+        html { scroll-behavior: smooth; }
+    </style>
+</head>
+<body class="bg-white text-slate-800">
+
+    <div class="marquee">
+        <p>
+            Expert Consultancy in Real Estate Asset Management • Industrial Opportunity Sourcing • Healthcare Operations & Compliance • Serving UP, Uttarakhand, Delhi NCR, and Haryana • Call +91 9506474980
+        </p>
+    </div>
+
+    <nav class="sticky top-0 z-50 bg-white/90 backdrop-blur-md shadow-sm px-6 py-4 flex justify-between items-center">
+        <div class="text-2xl font-black text-slate-900 tracking-tighter">ADVAIT<span class="text-blue-600">PRIME</span></div>
+        <div class="hidden md:flex space-x-8 font-semibold text-sm uppercase tracking-widest">
+            <a href="#real-estate" class="hover:text-blue-600">Real Estate</a>
+            <a href="#business" class="hover:text-blue-600">Industrial</a>
+            <a href="#healthcare" class="hover:text-blue-600">Healthcare</a>
+            <a href="https://wa.me/919506474980" class="text-blue-600 border-2 border-blue-600 px-4 py-1 rounded-md hover:bg-blue-600 hover:text-white transition">Get Quote</a>
+        </div>
+    </nav>
+
+    <header class="hero-bg min-h-[70vh] flex items-center justify-center text-center text-white px-6">
+        <div class="max-w-5xl">
+            <span class="bg-blue-600 text-xs font-bold px-3 py-1 rounded-full uppercase mb-4 inline-block">Established Excellence</span>
+            <h1 class="text-5xl md:text-7xl font-bold mb-6">Strategic Solutions for <br><span class="text-blue-400">Complex Industries</span></h1>
+            <p class="text-lg md:text-xl text-slate-300 mb-10 max-w-2xl mx-auto">We bridge the gap between institutional requirements and ground-level execution in Real Estate, Industry, and Healthcare.</p>
+            <div class="flex flex-col md:flex-row gap-4 justify-center">
+                <a href="#real-estate" class="bg-white text-slate-900 px-8 py-4 rounded-lg font-bold hover:bg-blue-500 hover:text-white transition">Explore Services</a>
+                <a href="tel:+919506474980" class="bg-transparent border border-slate-500 px-8 py-4 rounded-lg font-bold hover:bg-slate-800 transition">Contact Representative</a>
+            </div>
+        </div>
+    </header>
+
+    <section id="real-estate" class="py-24 px-6 bg-slate-50">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center">
+            <div>
+                <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&q=80&w=1000" alt="Real Estate" class="rounded-2xl shadow-2xl">
+            </div>
+            <div>
+                <h2 class="text-blue-600 font-bold uppercase tracking-widest mb-2">Service Alpha</h2>
+                <h3 class="text-4xl font-bold mb-6 text-slate-900">Real Estate & Asset Management</h3>
+                <p class="text-slate-600 mb-8 leading-relaxed">Our real estate vertical focuses on institutional facilitation and high-stakes land coordination. We ensure that every investment is backed by rigorous compliance and regional strategic mapping.</p>
+                
+                <div class="space-y-4">
+                    <div class="service-card p-4 bg-white rounded-lg shadow-sm">
+                        <h4 class="font-bold text-lg text-blue-900">Institutional Facilitation</h4>
+                        <p class="text-sm text-slate-500">Connecting institutional investors with prime commercial and residential opportunities.</p>
+                    </div>
+                    <div class="service-card p-4 bg-white rounded-lg shadow-sm">
+                        <h4 class="font-bold text-lg text-blue-900">Regional Coordination</h4>
+                        <p class="text-sm text-slate-500">Expertise in local land laws across UP, Uttarakhand, and Delhi NCR.</p>
+                    </div>
+                    <div class="service-card p-4 bg-white rounded-lg shadow-sm">
+                        <h4 class="font-bold text-lg text-blue-900">Portfolio Management</h4>
+                        <p class="text-sm text-slate-500">End-to-end asset tracking and value optimization for land banks.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="business" class="py-24 px-6">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center">
+            <div class="order-2 md:order-1">
+                <h2 class="text-blue-600 font-bold uppercase tracking-widest mb-2">Service Beta</h2>
+                <h3 class="text-4xl font-bold mb-6 text-slate-900">Industrial & Business Operations</h3>
+                <p class="text-slate-600 mb-8 leading-relaxed">Helping manufacturers and industrial giants set up and scale. We handle the operational mapping so you can focus on production.</p>
+                
+                <ul class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <li class="flex items-start space-x-3">
+                        <i class="fas fa-check-circle text-blue-500 mt-1"></i>
+                        <span class="font-medium">Opportunity Sourcing</span>
+                    </li>
+                    <li class="flex items-start space-x-3">
+                        <i class="fas fa-check-circle text-blue-500 mt-1"></i>
+                        <span class="font-medium">Operational Mapping</span>
+                    </li>
+                    <li class="flex items-start space-x-3">
+                        <i class="fas fa-check-circle text-blue-500 mt-1"></i>
+                        <span class="font-medium">Supply Chain Sourcing</span>
+                    </li>
+                    <li class="flex items-start space-x-3">
+                        <i class="fas fa-check-circle text-blue-500 mt-1"></i>
+                        <span class="font-medium">Strategic Planning</span>
+                    </li>
+                </ul>
+            </div>
+            <div class="order-1 md:order-2">
+                <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=1000" alt="Industry" class="rounded-2xl shadow-2xl">
+            </div>
+        </div>
+    </section>
+
+    <section id="healthcare" class="py-24 px-6 bg-blue-900 text-white">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-blue-400 font-bold uppercase tracking-widest mb-2">Service Gamma</h2>
+                <h3 class="text-4xl font-bold">Healthcare & Hospital Management</h3>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white/10 p-8 rounded-xl border border-white/20 hover:bg-white/20 transition">
+                    <i class="fas fa-microscope text-3xl mb-4 text-blue-400"></i>
+                    <h4 class="text-xl font-bold mb-4">Operations & Admin</h4>
+                    <p class="text-blue-100 text-sm">Full-scale administrative restructuring and operational efficiency audits for private hospitals.</p>
+                </div>
+                <div class="bg-white/10 p-8 rounded-xl border border-white/20 hover:bg-white/20 transition">
+                    <i class="fas fa-file-medical text-3xl mb-4 text-blue-400"></i>
+                    <h4 class="text-xl font-bold mb-4">Statutory Compliance</h4>
+                    <p class="text-blue-100 text-sm">Navigating healthcare licenses, NABH preparation, and governmental regulations seamlessly.</p>
+                </div>
+                <div class="bg-white/10 p-8 rounded-xl border border-white/20 hover:bg-white/20 transition">
+                    <i class="fas fa-user-md text-3xl mb-4 text-blue-400"></i>
+                    <h4 class="text-xl font-bold mb-4">Project Execution</h4>
+                    <p class="text-blue-100 text-sm">End-to-end management for new hospital setups or expanding existing healthcare facilities.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-slate-950 text-white py-16 px-6">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-3 gap-12">
+            <div>
+                <div class="text-2xl font-black mb-6">ADVAIT<span class="text-blue-500">PRIME</span></div>
+                <p class="text-slate-400 text-sm leading-relaxed">A multi-domain consulting firm dedicated to enabling structured growth through strategic partnerships and effective execution.</p>
+            </div>
+            <div>
+                <h4 class="font-bold mb-6 uppercase tracking-widest text-sm">Contact Info</h4>
+                <p class="text-slate-400 text-sm mb-2">Reach us: reachus@advaitprimeconsultancy.com</p>
+                <p class="text-slate-400 text-sm mb-2">Phone: +91 9506474980</p>
+                <p class="text-slate-400 text-sm">Location: UP | Uttarakhand | Delhi | Haryana</p>
+            </div>
+            <div>
+                <h4 class="font-bold mb-6 uppercase tracking-widest text-sm">Follow Our Growth</h4>
+                <div class="flex space-x-4">
+                    <a href="#" class="w-10 h-10 bg-slate-800 rounded-full flex items-center justify-center hover:bg-blue-600 transition"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" class="w-10 h-10 bg-slate-800 rounded-full flex items-center justify-center hover:bg-blue-600 transition"><i class="fab fa-facebook-f"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="border-t border-slate-800 mt-16 pt-8 text-center text-slate-500 text-xs">
+            &copy; 2025 Advait Prime Consultancy & Services. All Rights Reserved.
+        </div>
+    </footer>
+
+    <a href="https://wa.me/919506474980" class="fixed bottom-6 right-6 bg-green-500 text-white p-4 rounded-full shadow-2xl hover:scale-110 transition-transform z-50">
+        <i class="fab fa-whatsapp text-2xl"></i>
+    </a>
+
+</body>
+</html>
