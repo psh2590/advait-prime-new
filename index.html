@@ -17,6 +17,8 @@
         .form-input { width: 100%; padding: 10px; margin-top: 5px; border: 1px solid #cbd5e1; border-radius: 6px; outline-color: #2563eb; color: #1e293b; }
         html { scroll-behavior: smooth; }
         .healthcare-accent { border-left: 5px solid #fbbf24; }
+        .hidden-form { display: none; }
+        .thank-you-msg { display: none; text-align: center; padding: 20px; background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 10px; color: #166534; }
     </style>
 </head>
 <body class="bg-white text-slate-800">
@@ -89,43 +91,63 @@
             </div>
 
             <div class="grid md:grid-cols-2 gap-8">
-                <div class="bg-white border-t-8 border-blue-900 p-8 rounded-xl shadow-lg">
-                    <h4 class="text-2xl font-bold mb-2 text-blue-900">NABH Certification Support</h4>
-                    <form action="https://formsubmit.co/reachus@advaitprimeconsultancy.com" method="POST" class="space-y-4">
-                        <input type="text" name="Hospital Name" placeholder="Hospital/Facility Name" class="form-input" required>
-                        <select name="Hospital Type" class="form-input" required>
-                            <option value="" disabled selected>Select Hospital Type</option>
-                            <option>Multi-speciality Hospital</option>
-                            <option>Single-speciality Hospital</option>
-                            <option>Nursing Home</option>
-                            <option>Clinic / Medical Centre</option>
-                            <option>Diagnostic Centre</option>
-                        </select>
-                        <div class="grid grid-cols-2 gap-4">
-                            <input type="text" name="Contact Person" placeholder="Contact Person" class="form-input" required>
-                            <input type="tel" name="Phone" placeholder="Phone Number" class="form-input" required>
-                        </div>
-                        <button type="submit" class="w-full bg-blue-900 text-white font-bold py-3 rounded uppercase tracking-widest hover:bg-blue-800">Get NABH Support</button>
-                    </form>
+                <div class="bg-white border-t-8 border-blue-900 p-8 rounded-xl shadow-lg relative">
+                    <div id="nabh-thankyou" class="thank-you-msg">
+                        <i class="fas fa-check-circle text-4xl mb-2"></i>
+                        <h4 class="font-bold text-lg">Thank You!</h4>
+                        <p>We have received your NABH inquiry. Our team will get back to you shortly.</p>
+                    </div>
+                    <div id="nabh-form-container">
+                        <h4 class="text-2xl font-bold mb-2 text-blue-900">NABH Certification Support</h4>
+                        <form onsubmit="handleFormSubmit(event, 'nabh')" class="space-y-4">
+                            <input type="text" name="Hospital Name" placeholder="Hospital/Facility Name" class="form-input" required>
+                            <select name="Hospital Type" class="form-input" required>
+                                <option value="" disabled selected>Select Hospital Type</option>
+                                <option>Multi-speciality Hospital</option>
+                                <option>Single-speciality Hospital</option>
+                                <option>Nursing Home</option>
+                                <option>Clinic / Medical Centre</option>
+                                <option>Diagnostic Centre</option>
+                            </select>
+                            <div class="grid grid-cols-2 gap-4">
+                                <input type="text" name="Contact Person" placeholder="Contact Person" class="form-input" required>
+                                <div class="relative">
+                                    <span class="absolute left-3 top-3.5 text-slate-400 text-sm font-semibold">+91</span>
+                                    <input type="tel" name="Phone" placeholder="Phone Number" class="form-input pl-12" pattern="[0-9]{10}" title="Please enter 10 digit phone number" required>
+                                </div>
+                            </div>
+                            <button type="submit" class="w-full bg-blue-900 text-white font-bold py-3 rounded uppercase tracking-widest hover:bg-blue-800">Get NABH Support</button>
+                        </form>
+                    </div>
                 </div>
 
-                <div class="bg-white border-t-8 border-yellow-500 p-8 rounded-xl shadow-lg">
-                    <h4 class="text-2xl font-bold mb-2 text-slate-900">Empanelment Support</h4>
-                    <form action="https://formsubmit.co/reachus@advaitprimeconsultancy.com" method="POST" class="space-y-4">
-                        <input type="text" name="Org Name" placeholder="Organization Name" class="form-input" required>
-                        <input type="text" name="Person Name" placeholder="Contact Person Name" class="form-input" required>
-                        <div class="grid grid-cols-2 gap-4">
-                            <input type="email" name="Email" placeholder="Email Address" class="form-input" required>
-                            <input type="tel" name="Phone" placeholder="Phone Number" class="form-input" required>
-                        </div>
-                        <select name="Target Empanelment" class="form-input" required>
-                            <option value="" disabled selected>Target Empanelment</option>
-                            <option>Govt. Schemes (ECHS/CGHS/AYUSHMAN)</option>
-                            <option>Private Insurance / TPAs</option>
-                            <option>Corporate Tie-ups</option>
-                        </select>
-                        <button type="submit" class="w-full bg-yellow-500 text-blue-900 font-bold py-3 rounded uppercase tracking-widest hover:bg-yellow-400">Request Support</button>
-                    </form>
+                <div class="bg-white border-t-8 border-yellow-500 p-8 rounded-xl shadow-lg relative">
+                    <div id="tpa-thankyou" class="thank-you-msg">
+                        <i class="fas fa-check-circle text-4xl mb-2"></i>
+                        <h4 class="font-bold text-lg">Submission Received!</h4>
+                        <p>Your empanelment request is being processed. Expect a call from us soon.</p>
+                    </div>
+                    <div id="tpa-form-container">
+                        <h4 class="text-2xl font-bold mb-2 text-slate-900">Empanelment Support</h4>
+                        <form onsubmit="handleFormSubmit(event, 'tpa')" class="space-y-4">
+                            <input type="text" name="Org Name" placeholder="Organization Name" class="form-input" required>
+                            <input type="text" name="Person Name" placeholder="Contact Person Name" class="form-input" required>
+                            <div class="grid grid-cols-2 gap-4">
+                                <input type="email" name="Email" placeholder="Email Address" class="form-input" required>
+                                <div class="relative">
+                                    <span class="absolute left-3 top-3.5 text-slate-400 text-sm font-semibold">+91</span>
+                                    <input type="tel" name="Phone" placeholder="Phone Number" class="form-input pl-12" pattern="[0-9]{10}" title="Please enter 10 digit phone number" required>
+                                </div>
+                            </div>
+                            <select name="Target Empanelment" class="form-input" required>
+                                <option value="" disabled selected>Target Empanelment</option>
+                                <option>Govt. Schemes (ECHS/CGHS/AYUSHMAN)</option>
+                                <option>Private Insurance / TPAs</option>
+                                <option>Corporate Tie-ups</option>
+                            </select>
+                            <button type="submit" class="w-full bg-yellow-500 text-blue-900 font-bold py-3 rounded uppercase tracking-widest hover:bg-yellow-400">Request Support</button>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
@@ -140,7 +162,7 @@
                 <h2 class="text-blue-800 font-bold uppercase tracking-widest mb-2">Service Beta</h2>
                 <h3 class="text-4xl font-bold mb-6">Real Estate & Asset Advisory</h3>
                 <p class="text-slate-600 mb-8 leading-relaxed">Specializing in institutional land acquisition and commercial asset mapping across UP, Uttarakhand, and Delhi NCR.</p>
-                <ul class="space-y-4">
+                <ul class="space-y-4 text-sm">
                     <li class="flex items-center p-3 bg-slate-50 rounded-lg"><i class="fas fa-check text-blue-600 mr-3"></i> Investment Opportunity Sourcing</li>
                     <li class="flex items-center p-3 bg-slate-50 rounded-lg"><i class="fas fa-check text-blue-600 mr-3"></i> Institutional Facilitation</li>
                     <li class="flex items-center p-3 bg-slate-50 rounded-lg"><i class="fas fa-check text-blue-600 mr-3"></i> Land Due Diligence & CLU Support</li>
@@ -179,10 +201,6 @@
                 <h4 class="font-bold mb-4 uppercase text-yellow-500">Quick Contact</h4>
                 <p class="text-slate-300 text-sm">reachus@advaitprimeconsultancy.com</p>
                 <p class="text-slate-300 text-sm">+91 9506474980</p>
-                <div class="flex md:justify-end space-x-4 mt-4">
-                    <a href="#" class="text-slate-400 hover:text-white"><i class="fab fa-linkedin text-2xl"></i></a>
-                    <a href="#" class="text-slate-400 hover:text-white"><i class="fab fa-facebook text-2xl"></i></a>
-                </div>
             </div>
         </div>
     </footer>
@@ -190,6 +208,41 @@
     <a href="https://wa.me/919506474980" class="fixed bottom-6 right-6 bg-green-500 text-white p-4 rounded-full shadow-2xl hover:scale-110 transition-transform z-50">
         <i class="fab fa-whatsapp text-2xl"></i>
     </a>
+
+    <script>
+        function handleFormSubmit(event, formType) {
+            event.preventDefault();
+            const form = event.target;
+            const data = new FormData(form);
+            
+            // Show loading state on button
+            const btn = form.querySelector('button');
+            const originalText = btn.innerText;
+            btn.innerText = "Sending...";
+            btn.disabled = true;
+
+            fetch("https://formsubmit.co/ajax/reachus@advaitprimeconsultancy.com", {
+                method: "POST",
+                body: data
+            })
+            .then(response => {
+                if (response.ok) {
+                    // Hide form container and show thank you message
+                    document.getElementById(formType + '-form-container').style.display = 'none';
+                    document.getElementById(formType + '-thankyou').style.display = 'block';
+                } else {
+                    alert("Something went wrong. Please try again.");
+                    btn.innerText = originalText;
+                    btn.disabled = false;
+                }
+            })
+            .catch(error => {
+                alert("Error submitting form. Check your internet connection.");
+                btn.innerText = originalText;
+                btn.disabled = false;
+            });
+        }
+    </script>
 
 </body>
 </html>
